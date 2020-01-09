@@ -1,3 +1,5 @@
+This is a work based on spark, please find code and results [here](https://databricks-prod-cloudfront.cloud.databricks.com/public/4027ec902e239c93eaaa8714f173bcfc/7965635341886967/262132380329106/5164190521743747/latest.html)
+
 **1. Motivation:**
 
 Recommender systems are widely used today by big companies such as Amazon, Youtube and Netflix for their internet products. A good recommendation system is crucial for their business values. In this work, ALS is used to build a recommendation system based on data from [grouplens](https://grouplens.org/datasets/movielens/latest/) (Small: 100,000 ratings and 3,600 tag applications applied to 9,000 movies by 600 users. Last updated 9/2018.) 
