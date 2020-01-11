@@ -10,6 +10,8 @@ The major data characteristics of training a recommendation system is the high s
 
 The other data feature in current work is that the movie number is around 10 times larger than users.
 
+![image]https://github.com/RuiyunHuang/Movies_Recommendation_System/blob/master/images/user_dis.png
+
 **Why ALS?: **
 
 Alternating Least Square (ALS) Matrix Factorization is a an intermediate technique along the pathway of developing recommendation system and widely used by many companies. The key feature of this approach is a combination of both good scalability and predictive accuracy. A detailed description can be found on [Standford CME323](http://stanford.edu/~rezab/classes/cme323/S15/notes/lec14.pdf) and [NETFLIX-recommender systems](https://datajobs.com/data-science-repo/Recommender-Systems-[Netflix].pdf)
