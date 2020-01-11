@@ -71,7 +71,7 @@ As already reflected by the observations above, when averaged by the number of r
 
 **Step.4 Applications**
 
-We can do recommendations for users based on this model and find similar users or movies according to the cosine correlation of their latent features.
+We can provide recommendations for users based on this model and find similar users or movies according to the cosine correlation of their latent features.
 
 Beyond that, we should also pay special to attention to the users who are not represented well by the model (Also true for movies). 
 
