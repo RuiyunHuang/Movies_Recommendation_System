@@ -10,11 +10,7 @@ The major data characteristics of training a recommendation system is the high s
 
 The other data feature in current work is that the movie number is around 10 times larger than users.
 
-<img align="left" width="100" height="100" src="https://github.com/RuiyunHuang/Movies_Recommendation_System/blob/master/images/user_dis.png">
-
-![image](https://github.com/RuiyunHuang/Movies_Recommendation_System/blob/master/images/user_dis.png) 
-
-![image](https://github.com/RuiyunHuang/Movies_Recommendation_System/blob/master/images/movie_dis.png)
+![image](https://github.com/RuiyunHuang/Movies_Recommendation_System/blob/master/images/user_dis.png) | ![image](https://github.com/RuiyunHuang/Movies_Recommendation_System/blob/master/images/movie_dis.png)
 
 **Why ALS?: **
 
@@ -40,15 +36,11 @@ For a comparison between the actual and predicted data, the first step is to rou
 
 On the user part, the prediction for most frequent user is better than least frequent user which is intutively right. However, on the movie part, it is suprising to find out that the prediction for movies with most number of ratings is far less good as those with only one rating. This is also not due to average effect as given by the figures. My guess is that since the number of movies rated only once is large in this data set, if we think of them as a category, the fitting might takes more 'care' to them. This is not the case for users. It might related to the ratio of total movies and users as mentioned in data characteristics part. 
 
-<img align="center" width="100" height="100" src="https://github.com/RuiyunHuang/Movies_Recommendation_System/blob/master/images/most_by_movies.png">
-
 ![image](https://github.com/RuiyunHuang/Movies_Recommendation_System/blob/master/images/least_by_movies.png)
 
 To further explore the result, I plot the average absolute error by movieId and number of ratings. As already reflected by the observation above, when averaged by number of ratings, the abs error is lower while the error converges as number of ratings gets to around 25. We can see although the fewer-rated movie may be fitted better, but the penalty is it's more unstable. So ideally, I would recommend 50 as the minimal number of rating for movie to get fair result. 
 
-![image](https://github.com/RuiyunHuang/Movies_Recommendation_System/blob/master/images/error_by_movies.png)
-
-![image](https://github.com/RuiyunHuang/Movies_Recommendation_System/blob/master/images/error_by_movies1.png)
+![image](https://github.com/RuiyunHuang/Movies_Recommendation_System/blob/master/images/error_by_movies.png) | ![image](https://github.com/RuiyunHuang/Movies_Recommendation_System/blob/master/images/error_by_movies1.png)
 
 **Step.4 Applications**
 
