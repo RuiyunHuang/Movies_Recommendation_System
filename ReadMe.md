@@ -60,7 +60,7 @@ Then for a 2x2 table:
 
 If we set k=1, normally we can have solutions without error. That means we certainly know the taste of each user and the feature of each movie. If we lose one rating, to guess rating using matrix factorization for this missing value is very risky or actually invalid since again there are infinite combination of results. Increase k would also lead to similar conclusion.
 
-Based on the analysis above, we can quickly imagine a 1xn and nx1 table will also fall into this situation. So ideally, we need to reasonable 'activity' of both movies and users which will ensure higher correlation among users and movies. 
+Based on the analysis above, we can quickly imagine a 1xn and nx1 table will also fall into this situation. So ideally, we need a reasonable 'activity' of movies and users which will ensure higher correlation among users and movies. 
 
 Further, it means the categoriesof hidden k 'features' of one movie is not necessarily totally equal to the other movie. It means we can not think of each row of the movie matrix as a certain feature. But hopefully, as the data and the correlation gets large enough, the influence of those concerns would decrease.
 
