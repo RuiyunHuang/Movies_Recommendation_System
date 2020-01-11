@@ -36,6 +36,7 @@ The parameters need be tuning are rank(how many latent features for each user an
 For a comparison between the actual and predicted data, the first step is to round the predicted score to 0.5. Then as all rating are plotted against userId and movie Id, the information is too messy. Here, we look at mean square error for 4 special cases (users rated most and least movies, and movies with most and least users) for a better sense on the result. 
 
 | MSE | User  | Movie |
+| -- | -- | -- |
 | Most | 0.578 | 0.571 |
 | Least  | 0.748 | 0.021 |
 
@@ -47,7 +48,7 @@ On the user part, the prediction for most frequent user is better than least fre
 Though counterintuitive, this is easy to understand. Le's consider what the matrix factorization actually does. It is trying to guess the 'most likely' higher k dimension features for each movie (m) and user (n) based on a n by m matrix with labelled ratings. 
 
 | | | |
-| | | |
+| -- | -- | --  |
 | | | |
 
 Firstly, let's consider a special case where we have one rating 4 from one user for one movie. There are infinite combinations of result can ensure 0 error even when k=1. 
@@ -55,6 +56,7 @@ Firstly, let's consider a special case where we have one rating 4 from one user 
 Then for a 2x2 table:
 
 | rating (1-5) | movie 1 | movie 2 |
+| -- | -- | -- |
 | user 1 | 3 | 4 |
 | user 2 | 1 | 5 |
 
