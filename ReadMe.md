@@ -47,9 +47,7 @@ On the user part, the prediction for most frequent user is better than least fre
 
 Though counterintuitive, this is easy to understand. Le's consider what the matrix factorization actually does. It is trying to guess the 'most likely' higher k dimension features for each movie (m) and user (n) based on a n by m matrix with labelled ratings. 
 
-| | | |
-| -- | -- | --  |
-| | | |
+![image](https://github.com/RuiyunHuang/Movies_Recommendation_System/blob/master/images/Matrix-Factorization.png)
 
 Firstly, let's consider a special case where we have one rating 4 from one user for one movie. There are infinite combinations of result can ensure 0 error even when k=1. 
 
@@ -60,9 +58,13 @@ Then for a 2x2 table:
 | user 1 | 3 | 4 |
 | user 2 | 1 | 5 |
 
-if we set k=1, we will see errors when fitting.   
+If we set k=1, normally we can have solutions without error. That means we certainly know the taste of each user and the feature of each movie. If we lose one rating, to guess rating using matrix factorization for this missing value is very risky or actually invalid since again there are infinite combination of results. Increase k would also lead to similar conclusion.
 
-To further explore the result, I plot the average absolute error by movieId and number of ratings. As already reflected by the observation above, when averaged by number of ratings, the abs error is lower while the error converges as number of ratings gets to around 25. We can see although the fewer-rated movie may be fitted better, but the penalty is it's more unstable. So ideally, I would recommend 50 as the minimal number of rating for movie to get fair result. 
+Based on the analysis above, we can quickly imagine a 1xn and nx1 table will also fall into this situation. So ideally, we need to reasonable 'activity' of both movies and users which will ensure higher correlation among users and movies. 
+
+Further, it means the categoriesof hidden k 'features' of one movie is not necessarily totally equal to the other movie. It means we can not think of each row of the movie matrix as a certain feature. But hopefully, as the data and the correlation gets large enough, the influence of those concerns would decrease.
+
+As already reflected by the observation above, when averaged by number of ratings, the abs error is lower while the error converges as number of ratings gets to around 25. We can see although the fewer-rated movie may be fitted better, but the penalty is it's more unstable. So ideally, I would recommend 50 as the minimal number of rating for movie to get fair result. 
 
 ![image](https://github.com/RuiyunHuang/Movies_Recommendation_System/blob/master/images/error_by_movie.png)
 ![image](https://github.com/RuiyunHuang/Movies_Recommendation_System/blob/master/images/error_by_movie_1.png)
@@ -75,6 +77,6 @@ Beyond that, we should also take care of those users who are not reprensent well
 
 **3. Conclusion**
 
-Using ALS based Matrix Factorization, I explored and built a movie recommendation systems. The data features are high sparsicity and unbalanced number ratio between users and movies. The latter might be a reason for unusually result stated above. 
+Using ALS based Matrix Factorization, I explored and built a movie recommendation systems. The data features are high sparsicity and unbalanced number ratio between users and movies. The latter could be a major reason for unusually result stated above. 
 
 Considering the application, I would recommend set 50 as threshhold for number of rating for a good prediction on movie. It means we should actively encourage people rating those movies with number of ratings lower than this value. Also, for those less-represented users and movies by the model, companies may want to take actions to acquire more data or at least split them out to build another model for them. 
