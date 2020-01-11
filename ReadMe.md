@@ -10,6 +10,8 @@ The major data characteristics of training a recommendation system is the high s
 
 The other data feature in current work is that the movie number is around 10 times larger than users.
 
+<img align="left" width="100" height="100" src="https://github.com/RuiyunHuang/Movies_Recommendation_System/blob/master/images/user_dis.png">
+
 ![image](https://github.com/RuiyunHuang/Movies_Recommendation_System/blob/master/images/user_dis.png) 
 
 ![image](https://github.com/RuiyunHuang/Movies_Recommendation_System/blob/master/images/movie_dis.png)
