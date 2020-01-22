@@ -4,14 +4,14 @@ This work is based on Spark. Please find source code and full results [here](htt
 
 Recommendation systems are widely used today by big companies such as Amazon, Youtube, and Netflix for their Internet products. A good recommendation system significantly increases the business values of those products by targeting correct customers. The goal of this work is to build a movie recommendation system by Alternating Least Square (ALS) matrix factorization and provide solution to the overfitting problem of the alogrithm. The movie rating data is from [grouplens](https://grouplens.org/datasets/movielens/latest/) (Small: 100,000 ratings and 3,600 tag applications applied to 9,000 movies by 600 users.)
 
-**Data characteristics: **
+## Data characteristics
 
 A major data characteristic of training a recommendation system is high sparsity. Another important data feature is that the number of movies is around 10 times larger than that of the users. Those features will lead to the overfitting problem discussed later.
 
 ![image](https://github.com/RuiyunHuang/Movies_Recommendation_System/blob/master/images/user_dis.png)
 ![image](https://github.com/RuiyunHuang/Movies_Recommendation_System/blob/master/images/movie_dis.png)
 
-**Why ALS?: **
+# Why ALS?
 
 Alternating Least Square (ALS) Matrix Factorization is an intermediary along the pathway of developing recommendation systems and is widely used by many companies. The key characteristic of this approach is a combination of good scalability and predictive accuracy. A detailed description can be found on [Standford CME323](http://stanford.edu/~rezab/classes/cme323/S15/notes/lec14.pdf) and [NETFLIX-recommender systems](https://datajobs.com/data-science-repo/Recommender-Systems-[Netflix].pdf)
 
@@ -68,7 +68,13 @@ To decide the threshold, I plot the MSE averaged by the number of ratings for ea
 
 ## Applications
 
-We can provide recommendations for users based on this model and find similar users or movies according to the cosine correlation of the latent features.
+We can provide recommendations for users based on this model and find similar users or movies according to the cosine correlation of the latent features. The following table shows the recommendation result for user (232, 575) using this model. We can say the model gives a reasonable recommendation for users given the type of movies are consistent.
+
+![image](https://github.com/RuiyunHuang/Movies_Recommendation_System/blob/master/images/recommended_1.png)
+
+It is also the same procedure to find similar movies for (471). But this model faces the problem that it can not predict if the movie has not been rated before.
+
+![image](https://github.com/RuiyunHuang/Movies_Recommendation_System/blob/master/images/recommended.png)
 
 Beyond that, we should also pay special to attention to the users who are not represented well by the model (Also true for movies). 
 
